@@ -16,11 +16,29 @@ import Faq3 from "./components/Faq3"
 
 function App() {
 
+  function scrollToSection(id, offset = 110) {
+    const element = document.getElementById(id);
+    console.log(offset)
+    if (element) {
+      const yOffset = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: yOffset + offset,
+        behavior: 'smooth',
+      });
+    }
+  }
+  
+  
+
+  const test = () => {
+    console.log("test called");
+  }
+  
 
   return (
     <section className="flex flex-col">
       {/* <Hero /> */}
-      <Hero2 />
+      <Hero2 scrollToSection={scrollToSection} test={test} />
       {/* <About /> */}
       <About2 />
       {/* <Qualifications /> */}

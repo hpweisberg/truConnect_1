@@ -1,16 +1,32 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'Affordable Connectivity Program', href: '#affordable-connectivity-program' },
+  { name: 'Qualifications', href: '#qualifications' },
+  { name: 'Enrollment', href: '#enrollment' },
+  { name: 'FAQ', href: '#faq' },
 ]
 
-export default function Hero2() {
+export default function Hero2({ scrollToSection }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  // function scrollToSection(id) {
+  //   const element = document.getElementById(id);
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // }
+
+  const scrollMobile = (id, ) => {
+    scrollToSection(id, )
+    console.log('1', mobileMenuOpen)
+    setMobileMenuOpen(false)
+    console.log('2', mobileMenuOpen)
+  }
+
 
   return (
     <div className="bg-white">
@@ -38,7 +54,13 @@ export default function Hero2() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+              <a key={item.name}
+                href={item.href}
+                onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.href.substring(1)); 
+                  }}
+                className="text-sm font-semibold leading-6 text-gray-900">
                 {item.name}
               </a>
             ))}
@@ -77,6 +99,11 @@ export default function Hero2() {
                     <a
                       key={item.name}
                       href={item.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollMobile(item.href.substring(1)); 
+                      }}
+                      // onClick={() => { test }}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >
                       {item.name}
@@ -88,7 +115,7 @@ export default function Hero2() {
                     href="#"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
-                    Log in
+                    Sign-up
                   </a>
                 </div>
               </div>
@@ -132,10 +159,10 @@ export default function Hero2() {
                 FREE Internet
               </h1>
             </div>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                fugiat veniam occaecat fugiat aliqua.
-              </p>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
+              fugiat veniam occaecat fugiat aliqua.
+            </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="#"
@@ -143,7 +170,9 @@ export default function Hero2() {
               >
                 I want FREE things!
               </a>
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+              <a href="#" 
+              onClick={() => scrollToSection('affordable-connectivity-program')}
+              className="text-sm font-semibold leading-6 text-gray-900">
                 Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
