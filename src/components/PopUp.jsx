@@ -1,6 +1,7 @@
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 // import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
+import photo from '/Great-news-over-the-phone-355711.jpg'
 
 export default function PopUp({openPopUp, open}) {
   // const [open, setOpen] = useState(true)
@@ -34,17 +35,20 @@ export default function PopUp({openPopUp, open}) {
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-4xl">
-                <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 flex gap-2">
+                <div className="bg-white flex gap-2">
                   <section className='hidden sm:block w-[100%] sm:w-[50%]'>
-                    <img src="https://cdn.thewirecutter.com/wp-content/media/2023/03/androidphones-2048px-s23front.jpg" alt="" />
+                    <img src={photo} alt="" />
                   </section>
-                  <div className="sm:flex sm:items-start w-[100%] sm:w-[50%]">
+                  <div className="sm:flex sm:items-start justify-center w-[100%] sm:w-[50%] pb-4 pt-5 sm:p-6 sm:pb-4">
                     {/* <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
                       <ExclamationTriangleIcon className="h-6 w-6 text-purple-600" aria-hidden="true" />
                     </div> */}
                     <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                      <Dialog.Title as="h3" className="text-3xl mb-4 font-semibold leading-6 text-gray-900">
+                        Get your
+                      </Dialog.Title>
                       <Dialog.Title as="h3" className="text-3xl font-semibold leading-6 text-gray-900">
-                        Get your FREE phone today!
+                        FREE phone today!
                       </Dialog.Title>
                       <div className="mt-2 flex flex-col items-center">
                         <form action="post" className='m-6'>

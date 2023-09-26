@@ -1,15 +1,10 @@
 import { useState } from "react"
-import Hero from "./components/Hero"
-import About from "./components/About"
-import Qualifications from "./components/Qualifications"
-import HowTo from "./components/HowTo"
-import Faq from "./components/Faq"
 
-import Hero2 from "./components/Hero2"
-import Qualifications2 from "./components/Qualifications2"
 import About2 from "./components/About2"
+import Hero2 from "./components/Hero2"
 import HowTo2 from "./components/HowTo2"
-import Faq2 from "./components/Faq2"
+import Qualifications2 from "./components/Qualifications2"
+
 import Faq3 from "./components/Faq3"
 
 import PopUp from "./components/PopUp"
@@ -31,7 +26,7 @@ function App() {
       });
     }
   }
-  
+
   const openPopUp = () => {
     setOpen(!open)
   }
@@ -39,17 +34,17 @@ function App() {
   return (
     <section className="flex flex-col">
       {/* <Hero /> */}
-      <PopUp openPopUp={openPopUp} open={open}/>
-      <Hero2 scrollToSection={scrollToSection} openPopUp={openPopUp}/>
+      <PopUp openPopUp={openPopUp} open={open} />
+      <Hero2 scrollToSection={scrollToSection} openPopUp={openPopUp} />
       {/* <About /> */}
-      <About2 openPopUp={openPopUp}/>
+      <About2 openPopUp={openPopUp} />
       {/* <Qualifications /> */}
-      <Qualifications2 openPopUp={openPopUp}/>
+      <Qualifications2 openPopUp={openPopUp} />
       {/* <HowTo /> */}
-      <HowTo2 openPopUp={openPopUp}/>
+      <HowTo2 openPopUp={openPopUp} />
       {/* <Faq /> */}
       {/* <Faq2 /> */}
-      <Faq3 openPopUp={openPopUp}/>
+      <Faq3 openPopUp={openPopUp} />
     </section>
   )
 }

@@ -153,19 +153,19 @@ export default function Hero2({ scrollToSection, openPopUp }) {
           <div className='flex flex-col items-center justify-center  text-center'>
             <div className="text-left ">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                FREE Phone
+                <span className='text-purple-400'>FREE</span> Phone
               </h1>
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                FREE Data
+              <span className='text-purple-600'>FREE</span> Data
               </h1>
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                FREE Internet
+              <span className='text-purple-800'>FREE</span> Internet
               </h1>
             </div>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            {/* <p className="mt-6 text-lg leading-8 text-gray-600">
               Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
               fugiat veniam occaecat fugiat aliqua.
-            </p>
+            </p> */}
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="#"
