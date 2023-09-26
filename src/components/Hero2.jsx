@@ -10,7 +10,7 @@ const navigation = [
   { name: 'FAQ', href: '#faq' },
 ]
 
-export default function Hero2({ scrollToSection }) {
+export default function Hero2({ scrollToSection, openPopUp }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   // function scrollToSection(id) {
@@ -26,6 +26,8 @@ export default function Hero2({ scrollToSection }) {
     setMobileMenuOpen(false)
     console.log('2', mobileMenuOpen)
   }
+
+  
 
 
   return (
@@ -66,7 +68,8 @@ export default function Hero2({ scrollToSection }) {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            <a href="#" className="text-sm font-semibold leading-6 text-gray-900"
+            onClick={openPopUp}>
               Qualify now <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
@@ -110,14 +113,14 @@ export default function Hero2({ scrollToSection }) {
                     </a>
                   ))}
                 </div>
-                <div className="py-6">
+                {/* <div className="py-6">
                   <a
-                    href="#"
+                    onClick={openPopUp}
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Sign-up
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           </Dialog.Panel>
@@ -167,6 +170,7 @@ export default function Hero2({ scrollToSection }) {
               <a
                 href="#"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                onClick={openPopUp}
               >
                 I want FREE things!
               </a>

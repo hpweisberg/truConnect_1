@@ -25,7 +25,7 @@ const steps = [
 
 ]
 
-export default function HowTo2() {
+export default function HowTo2({openPopUp}) {
   return (
     <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32" id='enrollment'>
       <img
@@ -95,7 +95,7 @@ export default function HowTo2() {
 
           <div className="mt-14 flex items-center justify-center gap-x-6 hover:cursor-pointer">
             <a
-              href="#"
+              onClick={openPopUp}
               className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Start enrollment now!

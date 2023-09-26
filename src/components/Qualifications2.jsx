@@ -49,7 +49,7 @@ const features = [
   },
 ]
 
-export default function Qualifications2() {
+export default function Qualifications2({openPopUp}) {
   return (
     <div className="overflow-hidden bg-white py-24 sm:py-32" id='qualifications'>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -85,7 +85,7 @@ export default function Qualifications2() {
         </div>
         <div className="mt-10 flex items-center justify-center gap-x-6 hover:cursor-pointer">
             <a
-              href="#"
+              onClick={openPopUp}
               className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-lg font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               I already qualify!

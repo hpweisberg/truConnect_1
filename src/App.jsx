@@ -1,3 +1,4 @@
+import { useState } from "react"
 import Hero from "./components/Hero"
 import About from "./components/About"
 import Qualifications from "./components/Qualifications"
@@ -11,10 +12,13 @@ import HowTo2 from "./components/HowTo2"
 import Faq2 from "./components/Faq2"
 import Faq3 from "./components/Faq3"
 
+import PopUp from "./components/PopUp"
 
 
 
 function App() {
+  const [open, setOpen] = useState(false)
+
 
   function scrollToSection(id, offset = 110) {
     const element = document.getElementById(id);
@@ -28,26 +32,24 @@ function App() {
     }
   }
   
-  
-
-  const test = () => {
-    console.log("test called");
+  const openPopUp = () => {
+    setOpen(!open)
   }
-  
 
   return (
     <section className="flex flex-col">
       {/* <Hero /> */}
-      <Hero2 scrollToSection={scrollToSection} test={test} />
+      <PopUp openPopUp={openPopUp} open={open}/>
+      <Hero2 scrollToSection={scrollToSection} openPopUp={openPopUp}/>
       {/* <About /> */}
-      <About2 />
+      <About2 openPopUp={openPopUp}/>
       {/* <Qualifications /> */}
-      <Qualifications2 />
+      <Qualifications2 openPopUp={openPopUp}/>
       {/* <HowTo /> */}
-      <HowTo2 />
+      <HowTo2 openPopUp={openPopUp}/>
       {/* <Faq /> */}
       {/* <Faq2 /> */}
-      <Faq3 />
+      <Faq3 openPopUp={openPopUp}/>
     </section>
   )
 }

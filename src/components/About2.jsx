@@ -1,4 +1,4 @@
-export default function About2() {
+export default function About2({openPopUp}) {
   return (
     <div className="bg-white" id="affordable-connectivity-program">
       <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
@@ -30,8 +30,8 @@ export default function About2() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
               <a
-                href="#"
                 className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                onClick={openPopUp}
               >
                 Do I qualify?
               </a>
